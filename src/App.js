@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import { Route,createBrowserRouter, RouterProvider,createRoutesFromElements } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Main from './Main/Main';
 import FirstPage from './Main/FirstPage';
 import Login from './index/Login';
