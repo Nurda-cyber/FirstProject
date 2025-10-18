@@ -1,0 +1,122 @@
+/* ========= Глобал: фон толық жабылсын, ақ жиек болмасын ========= */
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  color: #e8ecf3;
+  background: #0b1020; /* қор фон */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+*, *::before, *::after { box-sizing: border-box; }
+
+/* ========= Палитра ========= */
+:root{
+  --bg: #0b1020;
+  --card: #111735;
+  --accent: #6ea8fe;
+  --accent2:#22d3ee;
+  --text: #e8ecf3;
+  --muted:#a3acc2;
+}
+
+/* ========= Бет қаңқасы ========= */
+.auth-page { min-height: 100vh; display: flex; flex-direction: column; }
+.auth-main { flex: 1 0 auto; }
+
+/* ========= Негізгі фон және центрлеу ========= */
+.auth-bg{
+  width: 100%;
+  min-height: 100%;
+  padding: 48px 16px 20px;      /* төмен аздау — футерге жақын */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(110,168,254,.25), transparent 60%),
+    radial-gradient(900px 500px at 110% 10%, rgba(34,197,94,.18), transparent 60%),
+    linear-gradient(135deg, #0b1020 0%, #0b1020 40%, #141a3a 100%);
+}
+
+/* ========= Карточка (glass) ========= */
+.auth-card{
+  width: 100%;
+  max-width: 420px;
+  backdrop-filter: blur(12px);
+  background: rgba(17, 23, 53, 0.6);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+  color: var(--text);
+  position: relative;
+  z-index: 1;
+}
+
+/* Бренд бейдж */
+.brand-badge{
+  width: 64px; height: 64px; border-radius: 16px;
+  display: grid; place-items: center;
+  font-weight: 800; font-size: 22px; color: #0b1020;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  box-shadow: 0 10px 30px rgba(110,168,254,.35);
+}
+
+/* Мәтін */
+.auth-title{ font-weight: 700; letter-spacing: .2px; }
+.auth-muted{ color: var(--muted); }
+
+/* Инпуттар */
+.auth-card .form-control{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.15);
+  color: var(--text);
+}
+.auth-card .form-control::placeholder{ color: #cbd5e180; }
+.auth-card .form-control:focus{
+  background: rgba(255,255,255,.1);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 .2rem rgba(110,168,254,.15);
+  color: #fff;
+}
+.auth-card .input-group-text{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.15);
+  color: var(--muted);
+}
+
+/* Сілтеме */
+a.link-clean{ color:#cfe1ff; text-decoration:none; }
+a.link-clean:hover{ text-decoration: underline; }
+
+/* Батырма */
+.btn-accent{
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border: none; color: #0b1020; font-weight: 600;
+}
+.btn-accent:hover{ filter: brightness(1.05); }
+
+/* Қате «дірілі» */
+.shake{ animation: shake .35s linear; }
+@keyframes shake{
+  20%, 60%{ transform: translateX(-6px); }
+  40%, 80%{ transform: translateX(6px); }
+}
+
+/* Logout мәтіні */
+.logout-text{
+  font-size: 28px; font-weight: 700;
+  background: linear-gradient(90deg, var(--accent), var(--accent2), #34d399);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+@keyframes glow{
+  from{ text-shadow: 0 0 0 rgba(110,168,254,.0); }
+  to{   text-shadow: 0 0 16px rgba(110,168,254,.35); }
+}
+
+/* Адаптив */
+@media (max-width: 576px){
+  .auth-bg{ padding: 28px 12px 16px; }
+  .auth-card{ border-radius: 16px; }
+  .brand-badge{ width: 56px; height: 56px; font-size: 20px; }
+}

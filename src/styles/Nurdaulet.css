@@ -1,0 +1,71 @@
+/* ===========================
+   Nurdaulet.css — RootLayout
+   =========================== */
+:root{
+  --bg:#0b1020; --panel:rgba(17,23,53,.55); --border:rgba(255,255,255,.12);
+  --text:#e8ecf3; --muted:#a3acc2; --accent:#6ea8fe; --accent2:#22d3ee;
+  --ring:rgba(110,168,254,.35);
+}
+
+/* Глобал */
+html,body,#root{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+*,*::before,*::after{box-sizing:border-box}
+a{color:#cfe1ff;text-decoration:none} a:hover{color:#fff}
+:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
+.container{max-width:1140px;padding:0 16px}
+
+/* Glass Header */
+header.root-header{
+  position:sticky;top:0;z-index:50;border-radius:18px;
+  border:1px solid var(--border)!important;background:var(--panel);
+  backdrop-filter:blur(10px);margin:16px 0;padding:10px 16px!important;
+  box-shadow:0 18px 48px rgba(0,0,0,.30)
+}
+header.root-header.border-bottom{border-bottom:1px solid rgba(255,255,255,.1)!important}
+.brand-pill{
+  width:40px;height:40px;border-radius:12px;display:grid;place-items:center;
+  font-weight:800;font-size:18px;color:#0b1020;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  border:1px solid rgba(255,255,255,.15);box-shadow:0 10px 24px rgba(110,168,254,.30)
+}
+header.root-header .link-body-emphasis svg{filter:drop-shadow(0 4px 10px rgba(0,0,0,.35))}
+
+/* Навигация */
+header.root-header .nav{gap:2px}
+header.root-header .nav .nav-link{
+  position:relative;color:var(--muted);border-radius:10px;padding:.5rem .75rem;
+  transition:color .15s ease,transform .15s ease,text-shadow .15s ease
+}
+header.root-header .nav .nav-link:hover{color:#fff;transform:translateY(-1px);text-shadow:0 0 10px rgba(110,168,254,.35)}
+header.root-header .nav .nav-link.active,
+header.root-header .nav .nav-link[aria-current="page"]{color:#fff!important;background:rgba(255,255,255,.06);text-shadow:0 0 10px rgba(110,168,254,.35)}
+header.root-header .nav .nav-link::after{
+  content:"";position:absolute;left:12px;right:12px;bottom:4px;height:2px;border-radius:2px;opacity:.9;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));transform:scaleX(0);transform-origin:center;transition:transform .18s ease
+}
+header.root-header .nav .nav-link:hover::after,
+header.root-header .nav .nav-link.active::after,
+header.root-header .nav .nav-link[aria-current="page"]::after{transform:scaleX(1)}
+
+/* Оң жақ батырмалар */
+header.root-header .btn-primary{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  border:none;color:#0b1020;font-weight:600;box-shadow:0 8px 22px rgba(110,168,254,.25)
+}
+header.root-header .btn-primary:hover{filter:brightness(1.05)}
+header.root-header .btn-outline-primary{border-color:rgba(255,255,255,.22);color:var(--text);background:transparent}
+header.root-header .btn-outline-primary:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.35)}
+
+main{padding-bottom:24px;background:transparent!important}
+/* Bootstrap-тың ақ фонын сөндіру */
+main .bg-light, main .bg-white, main [class*="bg-"]{background:transparent!important}
+
+/* Адаптив */
+@media (max-width:992px){header.root-header{border-radius:16px;padding:8px 14px!important}}
+@media (max-width:768px){
+  .brand-pill{width:36px;height:36px;font-size:16px}
+  header.root-header .nav .nav-link{padding:.45rem .6rem}
+  header.root-header .nav .nav-link::after{left:10px;right:10px;bottom:3px}
+}
+@media (max-width:576px){.container{padding:0 12px}header.root-header{border-radius:14px}}

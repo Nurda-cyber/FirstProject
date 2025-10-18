@@ -1,0 +1,29 @@
+/* Толық енді, ақ жолақсыз glass футер */
+.site-footer{
+  margin:0!important;border-radius:0!important;width:100%;
+  border-top:1px solid rgba(255,255,255,.12)!important;
+  background-color:#0b1020!important;
+  background-image:
+    radial-gradient(900px 400px at 100% 0%, rgba(110,168,254,.06), transparent 60%),
+    radial-gradient(700px 350px at 0% 20%, rgba(34,211,238,.05), transparent 60%);
+  backdrop-filter:blur(8px);
+  padding-top:18px!important;padding-bottom:18px!important;z-index:0
+}
+.container-fluid{background:transparent!important;padding-left:0;padding-right:0}
+
+/* Сол/орт/оң элементтер */
+.footer-muted{color:#93a0bd}
+.footer-brand{text-decoration:none}
+.footer-logo{
+  width:44px;height:44px;display:grid;place-items:center;border-radius:12px;color:#0b1020;
+  background:linear-gradient(135deg,#6ea8fe,#22d3ee);
+  box-shadow:0 8px 22px rgba(110,168,254,.25);border:1px solid rgba(255,255,255,.15);
+  transition:transform .15s ease, box-shadow .15s ease, filter .15s ease
+}
+.footer-brand:hover .footer-logo{transform:translateY(-1px);box-shadow:0 12px 28px rgba(110,168,254,.32);filter:brightness(1.05)}
+.footer-nav .footer-link{
+  color:#a3acc2!important;text-decoration:none;
+  transition:color .15s ease, transform .15s ease, text-shadow .15s ease
+}
+.footer-nav .footer-link:hover{color:#e8ecf3!important;transform:translateY(-1px);text-shadow:0 0 12px rgba(110,168,254,.35)}
+@media (max-width:576px){.footer-logo{width:40px;height:40px;font-size:16px}}

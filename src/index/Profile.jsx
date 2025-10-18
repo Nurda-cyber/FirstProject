@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
-import Footer from './Footer';
+import Footer from '../components/Footer';
 
 const Profile = () => {
   const [profile, setProfile] = useState({});

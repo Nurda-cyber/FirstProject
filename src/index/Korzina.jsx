@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import Footer from '../index/Footer';
+import Footer from '../components/Footer';
 import axios from 'axios';
-import '../index/Nurda.css'; 
+import '../styles/Nurda.css'; 
 
 const Korzina = () => {
   const [books, setBooks] = useState(null);

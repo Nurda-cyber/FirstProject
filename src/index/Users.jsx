@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { NavLink } from 'react-router-dom';
-import Footer from './Footer';
-import './Users.css'; 
+import Footer from '../components/Footer';
+
 
 const Users = () => {
   const [users, setUsers] = useState([]);
